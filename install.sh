@@ -13,7 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+echo "start"
 maindir=$(pwd)
 git clone https://github.com/mit-nlp/MITIE.git
 cd MITIE
@@ -23,20 +23,19 @@ if [ "$(uname)" == "Darwin" ]; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew install cmake
 	brew install swig
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-	apt-get -y install cmake swig
-
+	cd mitielib
+	make
+	cd java
+	mkdir build
+	cd build
+	cmake ..
+	cmake --build . --config Release --target install
+	cd ../
+	cp cmake_swig_jni../javamitie.jar ../
+	cp cmake_swig_jni../libjavamitie.jnilib ../
+	cp cmake_swig_jni../javamitie.jar $maindir
+	cp cmake_swig_jni../libjavamitie.jnilib $maindir
+else then
+	wget "http://central.maven.org/maven2/edu/mit/ll/mitie/0.6/mitie-0.6.jar" -O mitielib/javamitie.jar
 fi
-
-cd mitielib
-make
-cd java
-mkdir build
-cd build
-cmake ..
-cmake --build . --config Release --target install
-cd ../
-cp cmake_swig_jni../javamitie.jar ../
-cp cmake_swig_jni../libjavamitie.jnilib ../
-cp cmake_swig_jni../javamitie.jar $maindir
-cp cmake_swig_jni../libjavamitie.jnilib $maindir
+echo "complete"
