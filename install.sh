@@ -23,7 +23,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew install cmake
 	brew install swig
-elif [ "$(uname)" == "LINUX" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	apt-get -y install cmake swig
 
 fi
