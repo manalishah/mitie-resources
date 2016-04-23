@@ -9,6 +9,7 @@
 # create any source folder, cd into it and paste the following commands
 git clone https://github.com/manalishah/mitie-resources.git
 cd mitie-resources
+# absolute path to mitie-resources folder 
 export NER_RES=$PWD
 export TIKA_APP={absolute-path-to-tika-app-1.13-SNAPSHOT.jar}
 chmod a+x install.sh
