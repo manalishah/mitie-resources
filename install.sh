@@ -13,7 +13,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-echo "start"
 maindir=$(pwd)
 git clone https://github.com/mit-nlp/MITIE.git
 cd MITIE
@@ -32,9 +31,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	cd ../
 	cp cmake_swig_jni../javamitie.jar ../
 	cp cmake_swig_jni../libjavamitie.jnilib ../
-	cp cmake_swig_jni../javamitie.jar $maindir
-	cp cmake_swig_jni../libjavamitie.jnilib $maindir
 else
 	wget "http://central.maven.org/maven2/edu/mit/ll/mitie/0.6/mitie-0.6.jar" -O mitielib/javamitie.jar
 fi
-echo "complete"
+cd $maindir

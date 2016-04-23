@@ -10,6 +10,7 @@
 git clone https://github.com/manalishah/mitie-resources.git
 cd mitie-resources
 export NER_RES=$PWD
+export TIKA_APP={absolute-path-to-tika-app-1.13-SNAPSHOT.jar}
 chmod a+x install.sh
 ./install.sh
 ```
@@ -19,13 +20,13 @@ chmod a+x install.sh
 
 **For Mac OS**
 ```
- java -Djava.library.path=$NER_RES/MITIE/mitielib -Dner.mitie.model=$NER_RES/MITIE/MITIE-models/english/ner_model.dat -Dner.impl.class=org.apache.tika.parser.ner.mitie.MITIENERecogniser -classpath $NER_RES/MITIE/mitielib/javamitie.jar:{absolute path to tika-app}/tika-app-1.13-SNAPSHOT.jar org.apache.tika.cli.TikaCLI --config=$NER_RES/tika-config.xml -m $NER_RES/sample.txt
+ java -Djava.library.path=$NER_RES/MITIE/mitielib -Dner.mitie.model=$NER_RES/MITIE/MITIE-models/english/ner_model.dat -Dner.impl.class=org.apache.tika.parser.ner.mitie.MITIENERecogniser -classpath $NER_RES/MITIE/mitielib/javamitie.jar:$TIKA_APP org.apache.tika.cli.TikaCLI --config=$NER_RES/tika-config.xml -m $NER_RES/sample.txt
 
 ```
 
 **For Window/Linux OS**
 ```
- java -Dner.mitie.model=$NER_RES/MITIE/MITIE-models/english/ner_model.dat -Dner.impl.class=org.apache.tika.parser.ner.mitie.MITIENERecogniser -classpath $NER_RES/MITIE/mitielib/javamitie.jar:{absolute path to tika-app}/tika-app-1.13-SNAPSHOT.jar org.apache.tika.cli.TikaCLI --config=$NER_RES/tika-config.xml -m $NER_RES/sample.txt
+ java -Dner.mitie.model=$NER_RES/MITIE/MITIE-models/english/ner_model.dat -Dner.impl.class=org.apache.tika.parser.ner.mitie.MITIENERecogniser -classpath $NER_RES/MITIE/mitielib/javamitie.jar:$TIKA_APP org.apache.tika.cli.TikaCLI --config=$NER_RES/tika-config.xml -m $NER_RES/sample.txt
 
 ```
 This should output the following metadata keys:
