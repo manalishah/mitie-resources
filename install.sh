@@ -20,7 +20,6 @@ cd MITIE
 make MITIE-models
 
 if [ "$(uname)" == "Darwin" ]; then
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew install cmake
 	brew install swig
 	cd mitielib

@@ -1,3 +1,8 @@
+## Requirements for MAC OS only##
+ Download and install Homebrew to use mitie-resources
+
+
+
 ## Setting up MITIE for TIKA ##
 
 ```
