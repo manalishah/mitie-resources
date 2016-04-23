@@ -45,7 +45,7 @@ resourceName: sample.txt
 
 Questions, comments?
 ===================
-Send them to [Manali Shah](manalids@usc.edu)
+Send them to [Manali Shah](mailto:manalids@usc.edu)
 
 Contributors
 ============
