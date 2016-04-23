@@ -1,5 +1,5 @@
 ## Requirements for MAC OS only##
- Download and install Homebrew to use mitie-resources
+ Download and install [Homebrew](http://brew.sh/) to use mitie-resources
 
 
 
